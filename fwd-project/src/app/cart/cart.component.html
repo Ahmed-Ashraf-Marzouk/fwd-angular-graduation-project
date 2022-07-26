@@ -1,0 +1,15 @@
+<app-form></app-form>
+<div *ngFor="let p of products; let i = index" [attr.data-index]="i">
+  <div *ngIf="amounts[i] > 0">
+    <app-product-item
+      [id]="p.id"
+      [name]="p.name"
+      [price]="p.price"
+      [image]="p.url"
+    ></app-product-item>
+  </div>
+</div>
+
+<div id="total">
+  <input [(ngModel)]="total" type="text" name="" id="" />
+</div>

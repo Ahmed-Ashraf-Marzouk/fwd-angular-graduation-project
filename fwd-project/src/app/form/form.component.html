@@ -1,0 +1,20 @@
+<form [formGroup]="userForm">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name" />
+
+  <label for="address">Address: </label>
+  <input maxlength="19" id="address" type="address" formControlName="address" />
+
+  <label for="creditCard">Credit card: </label>
+  <input
+    id="creditCard"
+    type="tel"
+    inputmode="numeric"
+    pattern="[0-9\s]{13,19}"
+    autocomplete="cc-number"
+    maxlength="19"
+    placeholder="xxxx xxxx xxxx xxxx"
+    formControlName="creditCard"
+  />
+  <button type="submit">Submit</button>
+</form>

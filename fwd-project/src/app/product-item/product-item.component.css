@@ -1,0 +1,16 @@
+.product-container{
+    background-color: rgb(237, 234, 229);
+    border: 1px solid #f7f1ed;
+    border-radius: 5%;
+    width: 200px;
+    text-align: center;
+    padding: 10%;
+    margin:0%;
+}
+
+.product-img{
+    cursor:pointer
+}
+.product-quantity{
+    width: 50%;
+}
