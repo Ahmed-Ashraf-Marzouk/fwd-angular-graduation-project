@@ -20,7 +20,7 @@
     class="product-quantity"
     type="number"
     [placeholder]="amounts[id - 1]"
-    (change)="changeAmount(item.value)"
+    (ngModelChange)="changeAmount(item.value)"
     max="30"
     min="0"
     #item

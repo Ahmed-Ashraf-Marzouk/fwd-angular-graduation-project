@@ -18,6 +18,9 @@ export class ProductItemComponent implements OnInit {
   @Input() name:any = '';
   @Input() price:any = '';
   @Input() image:any = '';
+  @Input() description:any = '';
+  url:any = this.router.url
+  id_stirng = '';
   @Output() current_amount:any = new EventEmitter<any>();
   amount:any = '';
   amounts:any = '';
@@ -25,6 +28,10 @@ export class ProductItemComponent implements OnInit {
   constructor(private http: HttpClient, private router:Router, private productDataService:ProductDataService, private cartService:CartService) { }
 
   ngOnInit(): void {
+    this.id_stirng = '/details/' + this.id.toString()
+    console.log("asd")
+    console.log(this.id_stirng)
+    console.log(this.url) 
     this.productDataService.getProductData().subscribe(data => {
       this.product_list = data
     })

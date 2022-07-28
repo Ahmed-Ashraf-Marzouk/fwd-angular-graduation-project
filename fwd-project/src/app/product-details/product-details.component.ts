@@ -15,6 +15,7 @@ export class ProductDetailsComponent implements OnInit {
   name:any = '';
   price:any= ''; 
   url:any = '';
+  description = '';
 
   constructor(private productDataService:ProductDataService, private activatedroute:ActivatedRoute) { }
 
@@ -29,6 +30,7 @@ export class ProductDetailsComponent implements OnInit {
       this.name = this.product.name;
       this.price = this.product.price;
       this.url = this.product.url;
+      this.description = this.product.description;
     })
     
   }

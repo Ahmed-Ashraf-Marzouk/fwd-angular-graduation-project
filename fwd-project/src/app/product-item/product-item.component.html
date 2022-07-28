@@ -11,6 +11,10 @@
   </div>
   <p class="product-name">{{ name }}</p>
   <p class="product-price">{{ price | currency: "EGP" }}</p>
+  <p *ngIf="url == id_stirng" class="product-description">
+    {{ description }}
+  </p>
+
   <!-- Input field in the home page -->
   <input
     [(ngModel)]="amount"
