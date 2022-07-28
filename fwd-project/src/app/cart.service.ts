@@ -44,9 +44,9 @@ export class CartService {
 
   }
   public cartEmpty(){
-    this.amounts = Array(6).fill(0);
+    this.amounts = Array(6).fill(0)
     this.amounts$ = of(this.amounts)
-    this.cost = Array(6).fill(0);
+    this.cost = Array(6).fill(0)
     this.total$ = of(this.cost);
     console.log("AMOUNTS")
     console.log(this.amounts)
