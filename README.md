@@ -24,8 +24,10 @@ Project consist of <b>main</b> page where products are listed, <b>cart</b> page,
 ### Confiramtion  
 ![image](https://user-images.githubusercontent.com/82055675/181630834-432e691b-61b8-4fff-8885-7d1c54f62dcc.png)
 
-
-### form 
+### Form 
 
 ![image](https://user-images.githubusercontent.com/82055675/181630786-c3ea86c1-1c90-4513-99c9-540e903a131d.png)
+
+### User alert! 
+![image](https://user-images.githubusercontent.com/82055675/181630951-97732aad-a5d9-40dc-8c1b-78b0274de4dd.png)
 
