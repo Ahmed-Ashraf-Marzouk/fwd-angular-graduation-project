@@ -10,28 +10,19 @@
     />
   </div>
   <p class="product-name">{{ name }}</p>
-  <p class="product-price">{{ price }}</p>
+  <p class="product-price">{{ price | currency: "EGP" }}</p>
   <!-- Input field in the home page -->
   <input
-    *ngIf="path === '/'"
     [(ngModel)]="amount"
     class="product-quantity"
     type="number"
     [placeholder]="amounts[id - 1]"
+    max="30"
+    min="0"
   />
-
-  <!-- Input field in the cart page -->
-  <input
-    *ngIf="path === '/cart'"
-    [(ngModel)]="amount"
-    class="product-quantity"
-    type="number"
-    [placeholder]="amounts[id - 1]"
-    (change)="changeAmount(item.value)"
-    #item
-  />
-
+  <br />
+  <br />
   <!-- button for the home page -->
-  <button *ngIf="path === '/'" (click)="addToCart()">Add to cart</button>
+  <button (click)="addToCart()">Add to cart</button>
 </div>
 <div></div>

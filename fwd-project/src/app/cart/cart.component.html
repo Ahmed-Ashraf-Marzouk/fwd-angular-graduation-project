@@ -1,16 +1,20 @@
-<app-form></app-form>
-<div *ngFor="let p of products; let i = index" [attr.data-index]="i">
-  <div *ngIf="amounts[i] > 0">
-    <app-cart-product-item
-      [id]="p.id"
-      [name]="p.name"
-      [price]="p.price"
-      [image]="p.url"
-      (current_amount)="currentAmout(p.id, $event)"
-    ></app-cart-product-item>
+<div id="cart-container">
+  <div id="products-container">
+    <div *ngFor="let p of products; let i = index" [attr.data-index]="i">
+      <div *ngIf="amounts[i] > 0">
+        <app-cart-product-item
+          [id]="p.id"
+          [name]="p.name"
+          [price]="p.price"
+          [image]="p.url"
+          (current_amount)="currentAmout(p.id, $event)"
+        ></app-cart-product-item>
+      </div>
+      <br />
+    </div>
+    <div id="total">
+      <p name="" id="">{{ total | currency: "EGP" }}</p>
+    </div>
   </div>
-</div>
-
-<div id="total">
-  <p name="" id="">{{ total | currency: "EGP" }}</p>
+  <app-form id="user-form"></app-form>
 </div>

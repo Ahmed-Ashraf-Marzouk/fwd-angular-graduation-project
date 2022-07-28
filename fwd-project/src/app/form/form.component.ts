@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-form',
@@ -14,9 +16,14 @@ export class FormComponent implements OnInit {
     address: new FormControl(''),
     creditCard: new FormControl(''),
   });
-  constructor() { }
+  constructor(private router: Router, private cartService: CartService) { }
 
   ngOnInit(): void {
   }
-
+  
+  public onSubmit(){
+     this.cartService.cartEmpty();
+     console.log("done")
+     this.router.navigate(['/', 'confirmation']);
+  }
 }

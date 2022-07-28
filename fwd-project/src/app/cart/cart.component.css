@@ -1,0 +1,11 @@
+#cart-container{
+    display: flex;
+}
+
+#user-from{
+    padding: 30%;
+}
+
+#products-container{
+    width:40%
+}

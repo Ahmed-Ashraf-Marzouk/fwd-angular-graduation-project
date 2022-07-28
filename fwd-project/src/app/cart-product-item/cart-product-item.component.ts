@@ -42,6 +42,10 @@ export class CartProductItemComponent implements OnInit {
   }
 
   public changeAmount(value:any){
+    if(value == 0)
+    {
+      alert(`Removed ${this.product_list[this.id-1].name} from your cart!`)
+    }
     this.current_amount.emit(value)
     this.cartService.addProduct(this.id, parseInt(value))
   }

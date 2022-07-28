@@ -1,20 +1,35 @@
-<form [formGroup]="userForm">
+<form
+  #form="ngForm"
+  [formGroup]="userForm"
+  id="user-form"
+  (ngSubmit)="onSubmit()"
+>
   <label for="name">Name: </label>
-  <input id="name" type="text" formControlName="name" />
-
+  <input required minlength="4" id="name" type="text" formControlName="name" />
+  <br /><br />
   <label for="address">Address: </label>
-  <input maxlength="19" id="address" type="address" formControlName="address" />
-
+  <input
+    required
+    minlength="10"
+    maxlength="40"
+    id="address"
+    type="address"
+    formControlName="address"
+  />
+  <br /><br />
   <label for="creditCard">Credit card: </label>
   <input
+    required
     id="creditCard"
     type="tel"
     inputmode="numeric"
     pattern="[0-9\s]{13,19}"
     autocomplete="cc-number"
+    minlength="19"
     maxlength="19"
     placeholder="xxxx xxxx xxxx xxxx"
     formControlName="creditCard"
   />
-  <button type="submit">Submit</button>
+  <br /><br />
+  <input [disabled]="form.invalid" type="submit" />
 </form>

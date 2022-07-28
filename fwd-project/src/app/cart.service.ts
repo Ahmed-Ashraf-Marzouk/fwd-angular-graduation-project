@@ -10,7 +10,7 @@ export class CartService {
   user_products: any = []
   amounts: any = Array(6).fill(0);
   cost:any = Array(6).fill(0);
-  // total$:any = of(this.cost);
+  total$:any = of(this.cost);
   amounts$: any = of(this.amounts)
 
   constructor(private producDataService:ProductDataService, private http:HttpClient) {
@@ -40,10 +40,15 @@ export class CartService {
   }
   
   public getTotal(): Observable<any> {
-    const total$ = new Observable(observer =>{
-        observer.next(this.cost)
-  })
-  return total$;
+    return this.total$
 
+  }
+  public cartEmpty(){
+    this.amounts = Array(6).fill(0);
+    this.amounts$ = of(this.amounts)
+    this.cost = Array(6).fill(0);
+    this.total$ = of(this.cost);
+    console.log("AMOUNTS")
+    console.log(this.amounts)
   }
 }

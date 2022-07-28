@@ -39,6 +39,7 @@ export class ProductItemComponent implements OnInit {
   public addToCart(){
     console.log("hi")
     this.cartService.addProduct(this.id, parseInt(this.amount))
+    alert(`Added ${this.amount} of ${this.product_list[this.id - 1].name} to your cart!`)
   }
 
   public changeAmount(value:any){

@@ -10,7 +10,7 @@
     />
   </div>
   <p class="product-name">{{ name }}</p>
-  <p class="product-price">{{ price }}</p>
+  <p class="product-price">{{ price | currency: "EGP" }}</p>
   <!-- Input field in the home page -->
 
   <!-- Input field in the cart page -->
@@ -21,6 +21,8 @@
     type="number"
     [placeholder]="amounts[id - 1]"
     (change)="changeAmount(item.value)"
+    max="30"
+    min="0"
     #item
   />
 </div>
