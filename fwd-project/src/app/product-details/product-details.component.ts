@@ -12,6 +12,9 @@ export class ProductDetailsComponent implements OnInit {
   product_list: any = [];
   product:any = '';
   id: any = '';
+  name:any = '';
+  price:any= ''; 
+  url:any = '';
 
   constructor(private productDataService:ProductDataService, private activatedroute:ActivatedRoute) { }
 
@@ -23,6 +26,9 @@ export class ProductDetailsComponent implements OnInit {
     this.productDataService.getProductData().subscribe(data => {
       this.product_list = data;
       this.product = this.product_list.find( (p:any) => p.id == this.id)
+      this.name = this.product.name;
+      this.price = this.product.price;
+      this.url = this.product.url;
     })
     
   }

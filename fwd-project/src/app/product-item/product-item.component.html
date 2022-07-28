@@ -27,7 +27,8 @@
     class="product-quantity"
     type="number"
     [placeholder]="amounts[id - 1]"
-    (change)="addToCart()"
+    (change)="changeAmount(item.value)"
+    #item
   />
 
   <!-- button for the home page -->

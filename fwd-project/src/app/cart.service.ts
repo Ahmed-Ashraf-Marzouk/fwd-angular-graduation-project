@@ -41,11 +41,9 @@ export class CartService {
   
   public getTotal(): Observable<any> {
     const total$ = new Observable(observer =>{
-      setTimeout(() => {
-        observer.next(this.cost
-          )
-      }, 10);
-    })
-    return total$;
+        observer.next(this.cost)
+  })
+  return total$;
+
   }
 }

@@ -1,1 +1,27 @@
-<p>cart-product-item works!</p>
+<div class="product-container">
+  <div class="image-container" [routerLink]="['/details', id]">
+    <img
+      class="product-img"
+      width="150px"
+      height="150px"
+      class="product-img"
+      [src]="image"
+      alt=""
+    />
+  </div>
+  <p class="product-name">{{ name }}</p>
+  <p class="product-price">{{ price }}</p>
+  <!-- Input field in the home page -->
+
+  <!-- Input field in the cart page -->
+  <input
+    *ngIf="path === '/cart'"
+    [(ngModel)]="amount"
+    class="product-quantity"
+    type="number"
+    [placeholder]="amounts[id - 1]"
+    (change)="changeAmount(item.value)"
+    #item
+  />
+</div>
+<div></div>

@@ -35,5 +35,17 @@ export class CartComponent implements OnInit {
     }) 
   }
 
+  public currentAmout(id:any, value:any){
+    this.amounts[id-1] = value
+    console.log("cart value")
+    console.log(value)
+    this.total = 0
+    for (let i = 0; i < this.products.length; i++)
+      {
+        this.total = this.total + this.products[i].price * this.amounts[i]; 
+      }
+    console.log("New total")
+  }
+
  
 }

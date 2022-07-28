@@ -4,6 +4,8 @@ import { Observable, of } from 'rxjs';
 import { CartService } from '../cart.service';
 import { ProductDataService } from '../product-data.service';
 import { HttpClient } from '@angular/common/http';
+import { Output, EventEmitter } from '@angular/core';
+
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -16,6 +18,7 @@ export class ProductItemComponent implements OnInit {
   @Input() name:any = '';
   @Input() price:any = '';
   @Input() image:any = '';
+  @Output() current_amount:any = new EventEmitter<any>();
   amount:any = '';
   amounts:any = '';
   path: any = '';
@@ -36,6 +39,11 @@ export class ProductItemComponent implements OnInit {
   public addToCart(){
     console.log("hi")
     this.cartService.addProduct(this.id, parseInt(this.amount))
+  }
+
+  public changeAmount(value:any){
+    this.current_amount.emit(value)
+    this.cartService.addProduct(this.id, parseInt(value))
   }
 
 
