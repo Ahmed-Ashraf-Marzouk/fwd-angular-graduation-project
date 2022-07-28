@@ -8,4 +8,5 @@ E-commerce application using angular framework. In this application, angular fun
 - Remove items from cart 
 - Checkout your order 
 - Return back and make another order. 
+
 Project consist of main page where products are listed, cart page, product details, confirmation page. I have used services to handle communication between different components and used @Input and @Output to communicate between parent-chiled relationship components. 
